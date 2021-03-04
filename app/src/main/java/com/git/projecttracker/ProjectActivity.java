@@ -32,7 +32,7 @@ public class ProjectActivity extends AppCompatActivity {
         projectAdapter = new ProjectAdapter(list);
         rcyProjectDetails.setAdapter(projectAdapter);
 
-        list.add(new ProjectModel("anki", "aaa", "aaaa"));
+        list.add(new ProjectModel("project name : anki", "project desc: aaa", "Date :aaaa"));
     }
 
     @Override
