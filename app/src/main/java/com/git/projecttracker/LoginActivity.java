@@ -1,5 +1,6 @@
 package com.git.projecttracker;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -36,20 +37,20 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void onClick(View view) {
         if (view == btnLogin) {
             validateUser();
+
         }
     }
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     private void validateUser() {
-        if (!validation.isInputEditTextFilled(edtUserName, getString(R.string.error_username))) {
+        if (!validation.isInputEditTextUserName(edtUserName, getString(R.string.error_username))) {
             return;
         }
-        if (!validation.isInputEditTextFilled(edtPassword, getString(R.string.error_message_password))) {
+        if (!validation.isInputEditTextMatches(edtPassword, getString(R.string.error_message_password))) {
             return;
         }
-        //
-        else {
-            Toast.makeText(activity, "No record found.", Toast.LENGTH_LONG).show();
-        }
+        Toast.makeText(activity, "No record found.", Toast.LENGTH_LONG).show();
+        startActivity(new Intent(LoginActivity.this, SignupActivity.class));
+
     }
 }

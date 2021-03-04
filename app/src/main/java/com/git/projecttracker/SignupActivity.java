@@ -1,5 +1,6 @@
 package com.git.projecttracker;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -38,10 +39,10 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     private void validateUser() {
-        if (!validation.isInputEditTextFilled(edtName, getString(R.string.error_name))) {
+        if (validation.isInputEditTextFilled(edtName, getString(R.string.error_name))) {
             return;
         }
-        if (!validation.isInputEditTextFilled(edtUserName, getString(R.string.error_username))) {
+        if (!validation.isInputEditTextUserName(edtUserName, getString(R.string.error_username))) {
             return;
         }
         if (!validation.isInputEditTextMatches(edtPassword, getString(R.string.error_message_password))) {
@@ -50,6 +51,7 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
         //
         else {
             Toast.makeText(activity, "No record found.", Toast.LENGTH_LONG).show();
+            startActivity(new Intent(activity, LoginActivity.class));
         }
     }
 }

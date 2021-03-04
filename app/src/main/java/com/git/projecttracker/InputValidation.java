@@ -23,7 +23,7 @@ public class InputValidation {
     @RequiresApi(api = Build.VERSION_CODES.M)
     public boolean isInputEditTextFilled(EditText editText, String message) {
         String value = editText.getText().toString().trim();
-        if (value.isEmpty()) {
+        if (value.isEmpty() || !value.matches("[a-zA-Z ]+")) {
             editText.setError(message);
             hideKeyboardFrom(editText);
             return false;
@@ -37,7 +37,7 @@ public class InputValidation {
     @RequiresApi(api = Build.VERSION_CODES.M)
     public boolean isInputEditTextUserName(EditText editText, String message) {
         String value = editText.getText().toString().trim();
-        if (value.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(value).matches()) {
+        if (value.isEmpty()) {
             editText.setError(message);
             hideKeyboardFrom(editText);
             return false;
@@ -48,8 +48,9 @@ public class InputValidation {
     @RequiresApi(api = Build.VERSION_CODES.M)
     public boolean isInputEditTextMatches(EditText editText, String message) {
         String value1 = editText.getText().toString().trim();
-        if (value1 == null) {
-            editText.setError("Please enter valid password");
+        if (value1.isEmpty()) {
+            editText.setError(message);
+            hideKeyboardFrom(editText);
         }
         return true;
     }

@@ -26,6 +26,7 @@
         android:gravity="center"
         android:hint="Enter Your Name"
         android:padding="16dp"
+        android:inputType="text"
         android:textColor="@color/black"
         android:textSize="14sp"
         android:textStyle="bold" />
@@ -38,6 +39,7 @@
         android:gravity="center"
         android:hint="Enter Your Username"
         android:padding="16dp"
+        android:inputType="text"
         android:textColor="@color/black"
         android:textSize="14sp"
         android:textStyle="bold" />
@@ -48,6 +50,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:gravity="center"
+        android:inputType="textPassword"
         android:hint="Enter Your Password"
         android:padding="16dp"
         android:textColor="@color/black"
