@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">ProjectTracker</string>
+    <string name="error_name">please enter name</string>
+    <string name="error_username">please enter username</string>
+    <string name="error_message_password">please enter password</string>
 </resources>
