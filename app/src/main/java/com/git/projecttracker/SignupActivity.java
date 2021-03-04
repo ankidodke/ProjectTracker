@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
@@ -15,6 +16,7 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
     private final AppCompatActivity activity = SignupActivity.this;
     EditText edtName, edtUserName, edtPassword;
     Button btnSignup;
+    TextView txtLogin;
     InputValidation validation;
 
     @Override
@@ -26,7 +28,10 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
         edtName = findViewById(R.id.edtSName);
         edtUserName = findViewById(R.id.edtSignUserName);
         edtPassword = findViewById(R.id.edtSignPassword);
+        txtLogin = findViewById(R.id.txtLogin);
+
         btnSignup.setOnClickListener(this);
+        txtLogin.setOnClickListener(this);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.M)
@@ -34,6 +39,9 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
     public void onClick(View view) {
         if (view == btnSignup) {
             validateUser();
+        }
+        if (view == txtLogin) {
+            startActivity(new Intent(activity, LoginActivity.class));
         }
     }
 

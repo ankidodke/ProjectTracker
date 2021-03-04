@@ -12,32 +12,38 @@
         android:src="@drawable/ic_baseline_arrow_forward_24" />
 
     <TextView
+        android:id="@+id/txtHome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:gravity="center"
         android:padding="8dp"
         android:text="Home"
+        android:onClick="ClickHome"
         android:textColor="@color/black"
         android:textSize="14sp" />
 
     <TextView
+        android:id="@+id/txtProject"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:gravity="center"
         android:padding="8dp"
         android:text="Project"
+        android:onClick="ClickProjcet"
         android:textColor="@color/black"
         android:textSize="14sp" />
 
     <TextView
+        android:id="@+id/txtTask"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:gravity="center"
         android:padding="8dp"
         android:text="Task"
+        android:onClick="ClickTask"
         android:textColor="@color/black"
         android:textSize="14sp" />
 

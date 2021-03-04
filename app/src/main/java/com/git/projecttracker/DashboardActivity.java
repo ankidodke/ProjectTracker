@@ -1,5 +1,6 @@
 package com.git.projecttracker;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -40,5 +41,18 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
         } else if (view == imgClose) {
             closeDrawer(drawerLayout);
         }
+    }
+
+    public void ClickHome(View view) {
+        closeDrawer(drawerLayout);
+    }
+
+    public void ClickProjcet(View view) {
+        startActivity(new Intent(this, ProjectActivity.class));
+        closeDrawer(drawerLayout);
+    }
+
+    public void ClickTask(View view) {
+
     }
 }

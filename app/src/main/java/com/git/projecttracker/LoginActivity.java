@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
@@ -15,8 +16,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     private final AppCompatActivity activity = LoginActivity.this;
     EditText edtUserName, edtPassword;
-    String mName, mPass;
     Button btnLogin;
+    TextView txtSignUp;
     InputValidation validation;
 
     @Override
@@ -25,10 +26,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.login_activity);
         validation = new InputValidation(activity);
         btnLogin = findViewById(R.id.btnLogin);
-        btnLogin.setOnClickListener(this);
+        txtSignUp = findViewById(R.id.txtSignup);
         edtUserName = findViewById(R.id.edtUserName);
         edtPassword = findViewById(R.id.edtPassword);
 
+        btnLogin.setOnClickListener(this);
+        txtSignUp.setOnClickListener(this);
     }
 
 
@@ -37,7 +40,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void onClick(View view) {
         if (view == btnLogin) {
             validateUser();
-
+        }
+        if (view == txtSignUp) {
+            startActivity(new Intent(activity, SignupActivity.class));
         }
     }
 
@@ -50,7 +55,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             return;
         }
         Toast.makeText(activity, "No record found.", Toast.LENGTH_LONG).show();
-        startActivity(new Intent(LoginActivity.this, SignupActivity.class));
+        startActivity(new Intent(LoginActivity.this, DashboardActivity.class));
 
     }
 }

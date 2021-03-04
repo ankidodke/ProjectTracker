@@ -29,6 +29,7 @@
         android:inputType="text"
         android:textColor="@color/black"
         android:textSize="14sp"
+        android:maxLength="15"
         android:textStyle="bold" />
 
     <EditText
@@ -42,6 +43,7 @@
         android:inputType="text"
         android:textColor="@color/black"
         android:textSize="14sp"
+        android:maxLength="15"
         android:textStyle="bold" />
 
     <EditText
@@ -53,6 +55,7 @@
         android:inputType="textPassword"
         android:hint="Enter Your Password"
         android:padding="16dp"
+        android:maxLength="15"
         android:textColor="@color/black"
         android:textSize="14sp"
         android:textStyle="bold" />
